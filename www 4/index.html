@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Change the url below to your site. This page does not need content, it is just a redirect. -->
+    <script type="text/javascript">
+    window.location = 'http://app.londonwidelmcs.org.uk';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="extra.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-1.8.1.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is loaded and it is now safe to make calls Cordova methods
+    //
+    function onDeviceReady() {
+        document.addEventListener("offline", onOffline, false);
+    }
+
+    // Handle the offline event
+    //
+    function onOffline() {
+    }
+    
+    function showAlert() {
+        navigator.notification.alert(
+        'Please try again when your connection is restored',  // message
+        alertDismissed,         // callback
+        'Data Connection Required',            // title
+        'Done'                  // buttonName
+       );
+    }
+
+  document.addEventListener("offline", onOffline, false);
+function onOffline()
+{
+    window.location = "offline.html";
+}
+        
+</script>
+
+        
+    </script>
+</head>
+ <body onload="onLoad()">
+  </body>
+</html>
